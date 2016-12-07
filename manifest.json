@@ -1,0 +1,23 @@
+{
+  "extension": {
+    "name": "Backend config",
+    "version": "1.1.0",
+    "description": "An internal extension of Studio for Preferences Panel",
+    "icon": "icon_config_tree.png",
+    "senders": [
+      {
+        "location": "studioToolbar",
+        "actionName": "init",
+        "icon": "icon_config.png",
+        "alternateIcon": "icon_config_tree.png"
+      }
+    ],
+    "actions": [
+      {
+        "name": "init",
+        "title": "Backend config"
+      }
+    ],
+    "lifetime": "application_lifetime"
+  }
+}
