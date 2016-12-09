@@ -23,11 +23,16 @@
 
 
 function init() {
+
+	studio.extension.registerTabPage('app/index.html', 'icon_config_tree.png', 'Setup your config');
+
+
+
 	var rememberInNextSession = true;
 	var openOnLeft = false;
 	var isBlackTheme = false;
 
-	studio.extension.openPageInTab('app/index.html', 'WaConfig', rememberInNextSession, openOnLeft, isBlackTheme, "studio::waConfig");
+	studio.extension.openPageInTab('app/index.html', 'Backend config', rememberInNextSession, openOnLeft, isBlackTheme, "studio::waConfig");
 	return true;
 }
 

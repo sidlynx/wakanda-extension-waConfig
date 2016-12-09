@@ -3,7 +3,7 @@
     "name": "Backend config",
     "version": "1.1.0",
     "description": "An internal extension of Studio for Preferences Panel",
-    "icon": "icon_config_tree.png",
+    "icon": "icon_config.png",
     "senders": [
       {
         "location": "studioToolbar",

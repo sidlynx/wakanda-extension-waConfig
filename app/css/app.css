@@ -1,29 +1,32 @@
-        
-        .tile {
-            border: 1px solid #E1E1E1;
-            border-radius: 0px;
-            cursor: pointer;
-            background-color: #F3F3F3;
-        }
-        
-        .tile:hover {
-            border: 1px solid #F9B50F;
-            background-color: #FFD034;
-        }
-        
-        .tile .content {
-            text-align: center;
-        }
-        
-        .tile .content:hover {
-            background-color: #FFD034;
-        }
-        
-        .tile .title {
-            font-weight: bold;
-            font-family: 'Roboto';
-            text-align: center;
-            background-color: white;
-            font-size : 16px;
-            color : #212121;
-        }
+@font-face {
+    font-family: 'Roboto regular';
+    src: url('../assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+.tile {
+    border: 1px solid #E1E1E1;
+    border-radius: 0px;
+    cursor: pointer;
+    background-color: #F3F3F3;
+}
+
+.tile:hover {
+    border: 1px solid #F9B50F;
+    background-color: #FFD034;
+}
+
+.tile .content {
+    text-align: center;
+}
+
+.tile .content:hover {
+    background-color: #FFD034;
+}
+
+.tile .title {
+    font-weight: bold;
+    font-family: 'Roboto regular';
+    text-align: center;
+    background-color: white;
+    font-size : 16px;
+    color : #212121;
+}
