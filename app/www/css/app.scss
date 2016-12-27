@@ -1,6 +1,11 @@
+
 @font-face {
     font-family: 'Roboto regular';
     src: url('../assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+body{
+    font-family: 'Roboto regular' !important;
 }
 .tile {
     border: 1px solid #E1E1E1;
