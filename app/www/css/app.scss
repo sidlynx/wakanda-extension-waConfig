@@ -1,15 +1,15 @@
-
 @font-face {
     font-family: 'Roboto regular';
     src: url('../assets/fonts/Roboto/Roboto-Regular.ttf');
 }
 
-body{
+body {
     font-family: 'Roboto regular' !important;
 }
+
 .tile {
     border: 1px solid #E1E1E1;
-    border-radius: 0px;
+    border-radius: 0;
     cursor: pointer;
     background-color: #F3F3F3;
 }
@@ -32,6 +32,52 @@ body{
     font-family: 'Roboto regular';
     text-align: center;
     background-color: white;
-    font-size : 16px;
-    color : #212121;
+    font-size: 16px;
+    color: #212121;
+}
+
+ul {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    list-style: none;
+}
+
+li {
+    margin: 0 5px 0px 5px !important;
+    padding-left: 0 !important;
+    list-style: none;
+}
+
+ul{
+
+}
+
+ul > li > label {
+    min-width: 60px !important;
+    display: block !important;
+}
+
+input,
+select,
+textarea {
+    box-sizing: border-box !important;
+    padding-left: 6px !important;
+    font-size: 13px !important;
+
+}
+
+input[type="text"] {
+    box-sizing: border-box !important;
+    min-width: 240px !important;
+    opacity: 1 !important;
+    font-family: 'Roboto', Arial, sans-serif !important;
+    border-radius: 1px !important;
+    -webkit-appearance: none !important;
+    border: 1px solid #eee;
+    position: relative !important;
+    height:30px !important;
+}
+
+input[type="checkbox"] {
+    margin-right:20px;
 }

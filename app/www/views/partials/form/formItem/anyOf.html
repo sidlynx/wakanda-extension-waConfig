@@ -1,0 +1,6 @@
+<ul>
+    <div ng-repeat="property in model.properties">
+        <input type="checkbox" ng-model="property.selected" ng-true-value="true" ng-false-value="false" /> <label>{{property.formLabel}}</label>
+        <li wa-object-form-item ng-if="property.type=='object'" model="property" />
+    </div>
+</ul>

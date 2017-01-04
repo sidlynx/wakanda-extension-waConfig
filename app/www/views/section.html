@@ -1,8 +1,14 @@
 <div class="container-fluid">
     <div class="row" style="height:32px;border-bottom:1px solid #c5c5c5;">
-        <a href="#/">back</a>
+        <a href="#/"><i class="fa fa-long-arrow-left"></i> Back</a>
     </div>
     <div class="row">
-        
+        <div class="col-xs-8" style="margin-top:30px;">
+            <h3 style="font-size : 11px;color : #555555;font-family: 'Roboto regular';">BACKEND CONFIG</h3>
+            <div wa-section model="section.items[0]" />
+            <div style="margin-top:20px;">
+                <button class="btn" ng-click="section.generate()" style="color:white;background-color:#555;">Save</button>
+            </div>
+        </div>
     </div>
 </div>
