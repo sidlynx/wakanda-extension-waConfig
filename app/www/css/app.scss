@@ -3,7 +3,7 @@
     src: url('../assets/fonts/Roboto/Roboto-Regular.ttf');
 }
 
-* {
+.robotto {
     font-family: 'Roboto regular' !important;
 }
 
@@ -43,14 +43,12 @@ ul {
 }
 
 li {
-    margin: 0 5px 0px 5px !important;
+    margin: 0 5px !important;
     padding-left: 0 !important;
     list-style: none;
 }
 
-ul{
-
-}
+ul {}
 
 ul > li > label {
     min-width: 60px !important;
@@ -63,7 +61,6 @@ textarea {
     box-sizing: border-box !important;
     padding-left: 6px !important;
     font-size: 13px !important;
-
 }
 
 input[type="text"] {
@@ -75,9 +72,29 @@ input[type="text"] {
     -webkit-appearance: none !important;
     border: 1px solid #eee;
     position: relative !important;
-    height:30px !important;
+    height: 30px !important;
 }
 
 input[type="checkbox"] {
-    margin-right:20px;
+    margin-right: 20px;
+}
+
+.icon {
+    display: inline-block;
+    font-size: inherit;
+    text-rendering: auto;
+    width:14px;
+    height:14px;
+}
+
+.icon::before {
+
+}
+
+.icon-tooltip {
+    background-image: url('../assets/icons/tooltip.png');
+}
+
+.icon-tooltip:hover {
+    background-image: url('../assets/icons/tooltip_hover.png');
 }

@@ -76,11 +76,12 @@ module.exports = angular
                         "name": "ipAddress",
                         "type": "ip",
                         "formLabel": "Redis Ip address",
-                        "formTip": "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+                        "formTip": "Enter your Redis IPV4, IPV6 or hostname"
                     }, {
                         "name": "port",
                         "type": "port",
-                        "formLabel": "Redis Port"
+                        "formLabel": "Redis Port",
+                        "formTip": "Enter your Redis port"
                     }],
                     "formLabel": "Redis"
                 }, {
