@@ -4,8 +4,8 @@
       <i ng-if="model.formTip != undefined" class="icon icon-tooltip" uib-tooltip="{{model.formTip}}" style="color:#20bca3;margin-left:2px;"/>
     </label>
     <input type="text" class="large" ng-model="model.value" name="{{model.name}}" ng-pattern="/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/">
-    <span ng-show="form.$invalid" style="color:red;"><i class="fa fa-times-circle-o"></i> Wrong format</span>
-    <span ng-show="form.$valid && !form.$pristine" style="color:#20bca3;"><i class="fa fa-check-circle-o"></i></span>
+    <span ng-show="form.$invalid" style="color:red;"><i class="icon icon-error"></i> {{model.formError}}</span>
+    <span ng-show="form.$valid && !form.$pristine" style="color:#20bca3;"><i class="icon icon-valid"></i></span>
 </ng-form>
 
 <ng-form name="form" ng-if="model.type == 'port'">
@@ -14,6 +14,6 @@
       <i ng-if="model.formTip != undefined" class="icon icon-tooltip" uib-tooltip="{{model.formTip}}" style="color:#20bca3;margin-left:2px;"/>
     </label>
     <input type="text" class="large" ng-model="model.value" name="{{model.name}}" ng-pattern="/^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$/">
-    <span ng-show="form.$invalid" style="color:red;"><i class="fa fa-times-circle-o"></i> Wrong format</span>
-    <span ng-show="form.$valid && !form.$pristine" style="color:#20bca3;"><i class="fa fa-check-circle-o"></i></span>
+    <span ng-show="form.$invalid" style="color:red;"><i class="icon icon-error"></i> {{model.formError}}</span>
+    <span ng-show="form.$valid && !form.$pristine" style="color:#20bca3;"><i class="icon icon-valid"></i></span>
 </ng-form>

@@ -83,8 +83,11 @@ input[type="checkbox"] {
     display: inline-block;
     font-size: inherit;
     text-rendering: auto;
-    width:14px;
-    height:14px;
+    width:18px;
+    height:18px;
+    background-repeat : no-repeat;
+    background-position: center;
+    margin-top:4px;
 }
 
 .icon::before {
@@ -97,4 +100,12 @@ input[type="checkbox"] {
 
 .icon-tooltip:hover {
     background-image: url('../assets/icons/tooltip_hover.png');
+}
+
+.icon-valid{
+  background-image: url('../assets/icons/valid.png');
+}
+
+.icon-error{
+  background-image: url('../assets/icons/error.png');
 }
