@@ -3,8 +3,17 @@
     src: url('../assets/fonts/Roboto/Roboto-Regular.ttf');
 }
 
-.robotto {
+@font-face {
+    font-family: 'Roboto medium';
+    src: url('../assets/fonts/Roboto/Roboto-Medium.ttf');
+}
+
+.roboto-regular {
     font-family: 'Roboto regular' !important;
+}
+
+.roboto-medium {
+    font-family: 'Roboto medium' !important;
 }
 
 .tile {
@@ -108,4 +117,8 @@ input[type="checkbox"] {
 
 .icon-error{
   background-image: url('../assets/icons/error.png');
+}
+
+.fwb{
+    font-weight: bold !important;
 }

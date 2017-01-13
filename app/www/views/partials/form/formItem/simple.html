@@ -1,19 +1,17 @@
 <ng-form name="form" ng-if="model.type == 'ip'">
-    <label style="min-width:60px;display:block;">
-      {{model.formLabel}}
-      <i ng-if="model.formTip != undefined" class="icon icon-tooltip" uib-tooltip="{{model.formTip}}" style="color:#20bca3;margin-left:2px;"/>
-    </label>
-    <input type="text" class="large" ng-model="model.value" name="{{model.name}}" ng-pattern="/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/">
+    <label style="min-width:60px;display:block;color:#212121;font-size:13px;" class="roboto-regular"> {{model.formLabel}}
+<i ng-if="model.formTip != undefined" class="icon icon-tooltip" uib-tooltip="{{model.formTip}}" style="color:#20bca3;margin-left:2px;"/>
+</label>
+    <input type="text" class="roboto-regular" style="font-size:13px;color:#555;" ng-model="model.value" name="{{model.name}}" ng-pattern="/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/">
     <span ng-show="form.$invalid" style="color:red;"><i class="icon icon-error"></i> {{model.formError}}</span>
     <span ng-show="form.$valid && !form.$pristine" style="color:#20bca3;"><i class="icon icon-valid"></i></span>
 </ng-form>
 
 <ng-form name="form" ng-if="model.type == 'port'">
-    <label style="min-width:60px;display:block;">
-      {{model.formLabel}}
-      <i ng-if="model.formTip != undefined" class="icon icon-tooltip" uib-tooltip="{{model.formTip}}" style="color:#20bca3;margin-left:2px;"/>
-    </label>
-    <input type="text" class="large" ng-model="model.value" name="{{model.name}}" ng-pattern="/^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$/">
+    <label style="min-width:60px;display:block;color:#212121;font-size:13px;" class="roboto-regular"> {{model.formLabel}}
+<i ng-if="model.formTip != undefined" class="icon icon-tooltip" uib-tooltip="{{model.formTip}}" style="color:#20bca3;margin-left:2px;"/>
+</label>
+    <input type="text" class="roboto-regular" style="font-size:13px;color:#555;" ng-model="model.value" name="{{model.name}}" ng-pattern="/^([0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$/">
     <span ng-show="form.$invalid" style="color:red;"><i class="icon icon-error"></i> {{model.formError}}</span>
     <span ng-show="form.$valid && !form.$pristine" style="color:#20bca3;"><i class="icon icon-valid"></i></span>
 </ng-form>
