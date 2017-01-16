@@ -53,7 +53,7 @@ var app = angular
 
 
 studio.inited().then(function () {
-
+    angular.bootstrap("html", ["waConfig"]);
 })
 
 

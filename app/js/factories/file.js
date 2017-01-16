@@ -1,14 +1,14 @@
 var app = require("../");
 
 app
-    .factory("FileFactory", function() {
+    .factory("FileFactory", function () {
         var FileFactory = {
-            loadText: function(path) {
-                var content = studio.loadText(path);
+            loadText: function (path) {
+                var content = studio.loadText(studio.solutionFolderPath + path);
                 return content;
             },
-            writeText: function(textContent, path) {
-                studio.saveText(textContent, path);
+            saveText: function (textContent, path) {
+                studio.saveText(textContent, studio.solutionFolderPath + path);
             }
         };
         return FileFactory;
