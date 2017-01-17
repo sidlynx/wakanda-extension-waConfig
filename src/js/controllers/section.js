@@ -20,14 +20,14 @@ app
                     "properties": [{
                         "name": "ipAddress",
                         "type": "ip",
-                        "value": "192.168.1.1",
+                        "value": "",
                         "formLabel": "Redis Ip address",
                         "formTip": "Enter your Redis IPV4, IPV6 or hostname",
                         "formError": "Invalid IP format"
                     }, {
                         "name": "port",
                         "type": "port",
-                        "value": "154",
+                        "value": "",
                         "formLabel": "Redis Port",
                         "formTip": "Enter your Redis port",
                         "formError": "Invalid Port number"
@@ -114,7 +114,7 @@ exports.del = function(key) {
 
 
         $scope.loadObject = function(){
-            
+
         }
         $scope.section.load = function () {
 
