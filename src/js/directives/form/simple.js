@@ -10,6 +10,6 @@ app
             link: function(scope, element, attrs) {
               console.log("simple");
             },
-            templateUrl: "www/views/partials/form/formItem/simple.html"
+            templateUrl: "views/partials/form/formItem/simple.html"
         };
     })

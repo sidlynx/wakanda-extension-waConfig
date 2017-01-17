@@ -10,6 +10,6 @@ app
             link: function(scope, element, attrs) {
 
             },
-            templateUrl: "www/views/partials/form/formItem/object.html"
+            templateUrl: "views/partials/form/formItem/object.html"
         };
     })

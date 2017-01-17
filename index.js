@@ -24,7 +24,7 @@
 
 function init() {
 
-	studio.extension.registerTabPage('app/index.html', 'icon_config_tree.png', 'Setup your config');
+	studio.extension.registerTabPage('build/index.html', 'icon_config_tree.png', 'Setup your config');
 
 
 
@@ -32,7 +32,7 @@ function init() {
 	var openOnLeft = false;
 	var isBlackTheme = false;
 
-	studio.extension.openPageInTab('app/index.html', 'Backend config', rememberInNextSession, openOnLeft, isBlackTheme, "studio::waConfig");
+	studio.extension.openPageInTab('build/index.html', 'Backend config', rememberInNextSession, openOnLeft, isBlackTheme, "studio::waConfig");
 	return true;
 }
 

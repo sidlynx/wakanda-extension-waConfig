@@ -1,7 +1,7 @@
-var app = require("../../");
+var app = require("../");
 
 app
-    .directive("waAnyOfFormItem", function() {
+    .directive("waSection", function() {
         return {
             restrict: "AEC",
             scope: {
@@ -10,6 +10,6 @@ app
             link: function(scope, element, attrs) {
 
             },
-            templateUrl: "www/views/partials/form/formItem/anyOf.html"
+            templateUrl: "views/partials/section/index.html"
         };
     })

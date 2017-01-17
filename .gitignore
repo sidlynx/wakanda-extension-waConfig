@@ -1,12 +1,3 @@
 debug.log
 /node_modules/
-/app/*.ttf
-/app/*.js
-/app/www/*.eot
-/app/www/*.svg
-/app/www/*.woff2
-/app/www/*.woff
-/app/*.eot
-/app/*.svg
-/app/*.woff2
-/app/*.woff
+/build/

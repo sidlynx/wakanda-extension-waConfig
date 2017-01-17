@@ -1,2 +1,2 @@
-var app = require("./app/js/index.js");
+var app = require("./src/js/index.js");
 

@@ -10,7 +10,7 @@ app
             link: function(scope, element, attrs) {
               console.log("form");
             },
-            templateUrl: "www/views/partials/form/index.html"
+            templateUrl: "views/partials/form/index.html"
         };
     })
 

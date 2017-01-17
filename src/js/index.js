@@ -23,15 +23,15 @@ var app = angular
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'www/views/index.html',
+                templateUrl: 'views/index.html',
                 controller: 'IndexCtrl'
             })
             .when('/:section', {
-                templateUrl: 'www/views/section.html',
+                templateUrl: 'views/section.html',
                 controller: 'SectionCtrl'
             })
             .otherwise({
-                templateUrl: 'www/404.html',
+                templateUrl: '404.html',
                 controller: 'IndexCtrl'
             });
 
