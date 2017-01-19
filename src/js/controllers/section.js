@@ -43,18 +43,18 @@ app
                         "pathOld": "backend/modules/wakanda-cache-custom/index.json",
                         "path": "customCache.json",
                         "value": `exports.set = function(key, value){
-// set() method is called when the Wakanda server needs to save data in the cache
-// Type your code here
+    // set() method is called when the Wakanda server needs to save data in the cache
+    // Type your code here
 };
 
 exports.get = function(key) {
-// get() method is called when the Wakanda server needs to retrieve data from the cache
-// Type your code here
+    // get() method is called when the Wakanda server needs to retrieve data from the cache
+    // Type your code here
 };
 
 exports.del = function(key) {
-// del() method is called when the Wakanda server needs to delete data from the cache
-// Type your code here
+    // del() method is called when the Wakanda server needs to delete data from the cache
+    // Type your code here
 };`,
                         "formLabel": "File"
                     }],

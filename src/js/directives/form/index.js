@@ -1,14 +1,14 @@
 var app = require("../../");
 
 app
-    .directive("waForm", function() {
+    .directive("waForm", function () {
         return {
             restrict: "AEC",
             scope: {
                 model: "="
             },
-            link: function(scope, element, attrs) {
-              console.log("form");
+            link: function (scope, element, attrs) {
+
             },
             templateUrl: "views/partials/form/index.html"
         };
