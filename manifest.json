@@ -3,13 +3,13 @@
     "name": "Backend config",
     "version": "1.1.0",
     "description": "An internal extension of Studio",
-    "icon": "icon_config.png",
+    "icon": "icons\\icon_config.png",
     "senders": [
       {
         "location": "studioToolbar",
         "actionName": "init",
-        "icon": "icon.png",
-        "alternateIcon": "icon_config_tree.png"
+        "icon": "icons\\icon.png",
+        "alternateIcon": "icons\\icon_config_tree.png"
       }
     ],
     "actions": [
