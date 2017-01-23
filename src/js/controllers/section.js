@@ -41,7 +41,7 @@ app
                         "name": "code",
                         "type": "file",
                         "pathOld": "backend/modules/wakanda-cache-custom/index.json",
-                        "path": "customCache.json",
+                        "path": "customCache.js",
                         "value": `exports.set = function(key, value){
     // set() method is called when the Wakanda server needs to save data in the cache
     // Type your code here
