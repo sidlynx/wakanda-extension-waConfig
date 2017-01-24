@@ -17,6 +17,7 @@ app
                 {
                     "name": "Redis",
                     "type": "object",
+                    "hideable" : true,
                     "properties": [{
                         "name": "ipAddress",
                         "type": "ip",
@@ -37,6 +38,7 @@ app
                 {
                     "name": "Custom",
                     "type": "object",
+                    "hideable" : true,
                     "properties": [{
                         "name": "code",
                         "type": "file",
