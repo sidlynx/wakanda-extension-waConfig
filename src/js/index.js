@@ -11,6 +11,9 @@ window.Tether = require("../../node_modules/tether/dist/js/tether");
 require("../../node_modules/bootstrap/dist/css/bootstrap.css");
 require("../../node_modules/bootstrap/dist/js/bootstrap");
 
+require("../../node_modules/angular-flash-alert/dist/angular-flash.css");
+require("../../node_modules/angular-flash-alert/dist/angular-flash.js");
+
 require("angular-ui-bootstrap");
 
 
@@ -18,7 +21,7 @@ require("../www/css/app.scss");
 
 
 var app = angular
-    .module("waConfig", ["ngRoute", "ui.bootstrap"])
+    .module("waConfig", ["ngRoute", "ui.bootstrap","ngFlash"])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
