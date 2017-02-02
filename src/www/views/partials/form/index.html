@@ -1,7 +1,12 @@
-<li wa-simple-form-item ng-if="model.type != 'object' && model.type != 'anyOf'" model="model" ng-repeat="model in model.properties"
-/>
+<div class="" style="">
 
-<li wa-object-form-item ng-if="property.type=='object'" model="property" ng-repeat="property in model.properties" />
+    <h6 style="margin-top:10px;font-size:16px;color:#212121;" class="fwb roboto-medium">{{model.name}}</h6>
+    <hr/>
 
-<li wa-any-of-form-item ng-if="property.type=='anyOf'" model="property" ng-repeat="property in model.properties" />
-<!--li simple-form-item model="item" ng-repeat="item in model.properties" style="margin-left:10px !important;" /-->
+    <li wa-simple-form-item ng-if="model.type != 'object' && model.type != 'anyOf'" model="model" ng-repeat="model in model.properties" />
+
+    <li wa-object-form-item ng-if="property.type=='object'" model="property" ng-repeat="property in model.properties" />
+
+    <li wa-any-of-form-item ng-if="property.type=='anyOf'" model="property" ng-repeat="property in model.properties" />
+    <!--li simple-form-item model="item" ng-repeat="item in model.properties" style="margin-left:10px !important;" /-->
+</div>

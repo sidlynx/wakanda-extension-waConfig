@@ -5,7 +5,8 @@
     <div class="row">
         <div class="col-xs-8" style="margin-top:30px;">
             <flash-message duration="3000" show-close="true"></flash-message>
-            <div wa-section model="section.items[0]" />
+            <!--div wa-section model="section.schema" /-->
+            <ul wa-form model="section.schema" />
             <div style="margin-top:20px;">
                 <button class="btn" ng-click="section.generate()" style="color:white;background-color:#555;">Save</button>
             </div>

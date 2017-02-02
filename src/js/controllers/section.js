@@ -3,7 +3,7 @@ var app = require("../");
 app
     .controller("SectionCtrl", function($scope, FileFactory, Flash) {
         $scope.section = {};
-        $scope.section.items = [{
+        $scope.section.schema = {
             "name": "Cache",
             "type": "object",
             "properties": [{
@@ -64,7 +64,7 @@ exports.del = function(key) {
                     }
                 ]
             }]
-        }];
+        };
 
         $scope.section.generateObject = function(src, target) {
             if (src.type == "anyOf") {
@@ -103,7 +103,7 @@ exports.del = function(key) {
 
         $scope.section.generate = function() {
             var target = {};
-            target = $scope.section.generateObject($scope.section.items[0], target);
+            target = $scope.section.generateObject($scope.section.schema, target);
 
             try {
                 var textConfig = JSON.stringify(target);
@@ -114,11 +114,11 @@ exports.del = function(key) {
                     id: 'custom-id'
                 }, true);
             } catch (e) {
-              var message = '<strong>Error!</strong> An error occured while genarating files.';
-              var id = Flash.create('error', message, 0, {
-                  class: 'custom-class',
-                  id: 'custom-id'
-              }, true);
+                var message = '<strong>Error!</strong> An error occured while genarating files.';
+                var id = Flash.create('error', message, 0, {
+                    class: 'custom-class',
+                    id: 'custom-id'
+                }, true);
                 console.log(e);
             }
 
