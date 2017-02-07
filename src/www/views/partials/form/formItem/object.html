@@ -1,3 +1,4 @@
-<li wa-simple-form-item ng-if="property.type != 'object' && property.type != 'anyOf'" model="property" ng-repeat="property in model.properties"
+
+<li wa-simple-form-item ng-if="property.type != 'object' && property.type != 'anyOf'" schema="property" model="model[property.name]" ng-repeat="property in schema.properties"
 />
-<li wa-object-form-item ng-if="model.type=='object'" model="property" ng-repeat="property in model.properties" />
+<li wa-object-form-item ng-if="schema.type=='object'" schema="property" model="model[property.name]" ng-repeat="property in schema.properties" />

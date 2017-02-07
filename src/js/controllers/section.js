@@ -1,7 +1,7 @@
 var app = require("../");
 
 app
-    .controller("SectionCtrl", function($scope, FileFactory, Flash) {
+    .controller("SectionCtrl", function ($scope, FileFactory, Flash) {
         $scope.section = {};
         $scope.section.schema = {
             "name": "Cache",
@@ -10,41 +10,41 @@ app
                 "name": "engine",
                 "type": "anyOf",
                 "properties": [{
-                        "name": "local",
-                        "type": "object",
-                        "formLabel": "Local"
-                    },
-                    {
-                        "name": "Redis",
-                        "type": "object",
-                        "hideable": true,
-                        "properties": [{
-                            "name": "ipAddress",
-                            "type": "ip",
-                            "value": "",
-                            "formLabel": "Redis Ip address",
-                            "formTip": "Enter your Redis IPV4, IPV6 or hostname",
-                            "formError": "Invalid IP format"
-                        }, {
-                            "name": "port",
-                            "type": "port",
-                            "value": "",
-                            "formLabel": "Redis Port",
-                            "formTip": "Enter your Redis port",
-                            "formError": "Invalid Port number"
-                        }],
-                        "formLabel": "Redis"
-                    },
-                    {
-                        "name": "Custom",
-                        "type": "object",
-                        "hideable": true,
-                        "properties": [{
-                            "name": "code",
-                            "type": "file",
-                            "pathOld": "backend/modules/wakanda-cache-custom/index.json",
-                            "path": "customCache.js",
-                            "value": `exports.set = function(key, value){
+                    "name": "local",
+                    "type": "object",
+                    "formLabel": "Local"
+                },
+                {
+                    "name": "Redis",
+                    "type": "object",
+                    "hideable": true,
+                    "properties": [{
+                        "name": "ipAddress",
+                        "type": "ip",
+                        "value": "",
+                        "formLabel": "Redis Ip address",
+                        "formTip": "Enter your Redis IPV4, IPV6 or hostname",
+                        "formError": "Invalid IP format"
+                    }, {
+                        "name": "port",
+                        "type": "port",
+                        "value": "",
+                        "formLabel": "Redis Port",
+                        "formTip": "Enter your Redis port",
+                        "formError": "Invalid Port number"
+                    }],
+                    "formLabel": "Redis"
+                },
+                {
+                    "name": "Custom",
+                    "type": "object",
+                    "hideable": true,
+                    "properties": [{
+                        "name": "code",
+                        "type": "file",
+                        "pathOld": "backend/modules/wakanda-cache-custom/index.json",
+                        "path": "customCache.json",
+                        "value": `exports.set = function(key, value){
     // set() method is called when the Wakanda server needs to save data in the cache
     // Type your code here
 };
@@ -58,15 +58,34 @@ exports.del = function(key) {
     // del() method is called when the Wakanda server needs to delete data from the cache
     // Type your code here
 };`,
-                            "formLabel": "File"
-                        }],
-                        "formLabel": "Custom"
-                    }
+                        "formLabel": "File"
+                    }],
+                    "formLabel": "Custom"
+                }
                 ]
             }]
         };
 
-        $scope.section.generateObject = function(src, target) {
+        $scope.section.model = {
+            "Cache": {
+                "engine": {
+                    "local": {},
+                    "Redis": {
+                        "ipAddress": "192.168.2.2",
+                        "port": "85"
+                    },
+                    "Custom": {}
+                }
+            }
+        };
+
+        $scope.section.model = {};
+
+        $scope.section.submit = function () {
+            console.log($scope.section.model);
+        }
+
+        $scope.section.generateObject = function (src, target) {
             if (src.type == "anyOf") {
                 if (src.properties != undefined) {
                     var properties = src.properties;
@@ -101,7 +120,7 @@ exports.del = function(key) {
             return target;
         };
 
-        $scope.section.generate = function() {
+        $scope.section.generate = function () {
             var target = {};
             target = $scope.section.generateObject($scope.section.schema, target);
 
@@ -125,10 +144,10 @@ exports.del = function(key) {
         };
 
 
-        $scope.loadObject = function() {
+        $scope.loadObject = function () {
 
         }
-        $scope.section.load = function() {
+        $scope.section.load = function () {
 
         };
 
