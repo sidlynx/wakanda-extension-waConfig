@@ -79,9 +79,10 @@ exports.del = function(key) {
             }
         };
 
-        $scope.section.model = {};
+        $scope.section.models = {};
 
         $scope.section.submit = function () {
+            FileFactory.saveText(JSON.stringify($scope.section.model), "config.json");
             console.log($scope.section.model);
         }
 
@@ -150,5 +151,16 @@ exports.del = function(key) {
         $scope.section.load = function () {
 
         };
+
+
+        $scope.section.guid = function guid() {
+            function s4() {
+                return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+            }
+            return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                s4() + '-' + s4() + s4() + s4();
+        }
 
     })
