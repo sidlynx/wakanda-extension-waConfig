@@ -24,6 +24,12 @@ Get the latest version of the branch:
 $ git pull feature/cache
 ```
 
+Update project dependencies:
+
+```sh
+$ npm install
+```
+
 Build the extension using gulp default's task:
 
 ```sh
