@@ -1,6 +1,5 @@
 <div class="" style="">
-
-    <h6 style="margin-top:10px;font-size:16px;color:#212121;" class="fwb roboto-medium">{{schema.name}}</h6>
+    <h6 styles="margin-top:10px;font-size:16px;color:#212121;" class="sectionTitle">{{schema.name | uppercase}}</h6>
     <hr/>
     <li wa-simple-form-item ng-if="property.type != 'object' && property.type != 'anyOf'" schema="property" model="model[property.name]"
         ng-repeat="property in schema.properties" />
