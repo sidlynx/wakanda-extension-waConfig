@@ -43,7 +43,7 @@ app
                         "name": "code",
                         "type": "file",
                         "pathOld": "backend/modules/wakanda-cache-custom/index.json",
-                        "path": "customCache.json",
+                        "path": "modules/wakanda-cache-custom/index.js",
                         "value": `exports.set = function(key, value){
     // set() method is called when the Wakanda server needs to save data in the cache
     // Type your code here
@@ -82,7 +82,7 @@ exports.del = function(key) {
         $scope.section.models = {};
 
         $scope.section.submit = function () {
-            FileFactory.saveText(JSON.stringify($scope.section.model), "config.json");
+            FileFactory.saveText(JSON.stringify($scope.section.model), "backend/backend.waConfig");
             console.log($scope.section.model);
         }
 
