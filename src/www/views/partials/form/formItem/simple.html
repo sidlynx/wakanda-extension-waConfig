@@ -22,7 +22,7 @@
     <label style="min-width:60px;display:block;color:#212121;font-size:13px;" class="roboto-regular">
 <i ng-if="schema.formTip != undefined" class="icon icon-tooltip" uib-tooltip="{{schema.formTip}}" style="color:#20bca3;margin-left:2px;"/>
 </label>
-    <textarea class="roboto-regular" style="font-size:13px;color:#555;width:600px;height:200px;" ng-model="model" name="{{schema.name}}">
-        <span ng-show="formFile.$invalid" class="roboto-regular" style="color:red;"><i class="icon icon-error"></i> {{schema.formError}}</span>
-        <span ng-show="formFile.$valid" class="roboto-regular" style="color:#20bca3;"><i class="icon icon-valid"></i></span>
+    <textarea class="roboto-regular" style="font-size:13px;color:#555;width:600px;height:200px;" ng-model="model" name="{{schema.name}}"></textarea>
+    <span ng-show="formFile.$invalid" class="roboto-regular" style="color:red;"><i class="icon icon-error"></i> {{schema.formError}}</span>
+    <span ng-show="formFile.$valid" class="roboto-regular" style="color:#20bca3;"><i class="icon icon-valid"></i></span>
 </ng-form>

@@ -16,7 +16,13 @@ app
                 if (scope.schema.type === "file") {
                     scope.schema.code = FileFactory.loadText(scope.schema.path).then(function (content) {
                         scope.model = content;
-                        //scope.$apply();
+                        if (scope.model === "" && scope.schema.value !== undefined) {
+                            scope.model = scope.schema.value;
+                        }
+                    }, function (error) {
+                        if (scope.model === "" && scope.schema.value !== undefined) {
+                            scope.model = scope.schema.value;
+                        }
                     })
                 }
             },
