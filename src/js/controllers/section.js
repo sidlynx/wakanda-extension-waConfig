@@ -79,7 +79,7 @@ exports.del = function(key) {
             }
         };
 
-        $scope.section.models = {};
+        $scope.section.model = {};
 
         $scope.section.submit = function () {
             FileFactory.saveText(JSON.stringify($scope.section.model), "backend/backend.waConfig");
@@ -97,12 +97,8 @@ exports.del = function(key) {
                     for (var i = 0; i < properties.length; i++) {
                         var property = properties[i];
                         if (property.selected) {
-                            console.log("selected " + property.name);
                             if (!target[src.name]) target[src.name] = {};
                             target[src.name] = $scope.section.generateObject(property, target[src.name])
-                        }
-                        else{
-                            console.log("not selected " + property.name);
                         }
                     }
                 } else {
