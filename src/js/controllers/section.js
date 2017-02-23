@@ -79,12 +79,12 @@ exports.del = function(key) {
             }
         };
 
-        $scope.section.models = {};
+        $scope.section.model = {};
 
         $scope.section.submit = function () {
             FileFactory.saveText(JSON.stringify($scope.section.model), "backend/backend.waConfig");
             var message = '<strong>Success!</strong> Files generated successfully.';
-                var id = Flash.create('success', message, 0, {
+                var id = Flash.create('success', message, 3000, {
                     class: 'custom-class',
                     id: 'custom-id'
                 }, true);
