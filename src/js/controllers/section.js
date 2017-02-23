@@ -12,7 +12,7 @@ app
                 "properties": [{
                     "name": "local",
                     "type": "object",
-                    "formLabel": "Local"
+                    "label": "Local"
                 },
                 {
                     "name": "Redis",
@@ -22,18 +22,18 @@ app
                         "name": "ipAddress",
                         "type": "ip",
                         "value": "",
-                        "formLabel": "Redis Ip address",
-                        "formTip": "Enter your Redis IPV4, IPV6 or hostname",
-                        "formError": "Invalid IP format"
+                        "label": "Redis Ip address",
+                        "tip": "Enter your Redis IPV4, IPV6 or hostname",
+                        "error": "Invalid IP format"
                     }, {
                         "name": "port",
                         "type": "port",
                         "value": "",
                         "formLabel": "Redis Port",
                         "formTip": "Enter your Redis port",
-                        "formError": "Invalid Port number"
+                        "error": "Invalid Port number"
                     }],
-                    "formLabel": "Redis"
+                    "label": "Redis"
                 },
                 {
                     "name": "Custom",
@@ -43,8 +43,8 @@ app
                         "name": "code",
                         "type": "file",
                         "pathOld": "backend/modules/wakanda-cache-custom/index.json",
-                        "path": "modules/wakanda-cache-custom/index.js",
-                        "value": `exports.set = function(key, value){
+                        "path": "backend/modules/wakanda-cache-custom/index.js",
+                        "default": `exports.set = function(key, value){
     // set() method is called when the Wakanda server needs to save data in the cache
     // Type your code here
 };
@@ -58,9 +58,9 @@ exports.del = function(key) {
     // del() method is called when the Wakanda server needs to delete data from the cache
     // Type your code here
 };`,
-                        "formLabel": "File"
+                        "label": "File"
                     }],
-                    "formLabel": "Custom"
+                    "label": "Custom"
                 }
                 ]
             }]
@@ -79,7 +79,7 @@ exports.del = function(key) {
             }
         };
 
-        $scope.section.model = {};
+        $scope.section.models = {};
 
         $scope.section.submit = function () {
             FileFactory.saveText(JSON.stringify($scope.section.model), "backend/backend.waConfig");
@@ -88,7 +88,6 @@ exports.del = function(key) {
                     class: 'custom-class',
                     id: 'custom-id'
                 }, true);
-            console.log($scope.section.model);
         }
 
         $scope.section.generateObject = function (src, target) {
@@ -98,8 +97,12 @@ exports.del = function(key) {
                     for (var i = 0; i < properties.length; i++) {
                         var property = properties[i];
                         if (property.selected) {
+                            console.log("selected " + property.name);
                             if (!target[src.name]) target[src.name] = {};
                             target[src.name] = $scope.section.generateObject(property, target[src.name])
+                        }
+                        else{
+                            console.log("not selected " + property.name);
                         }
                     }
                 } else {
@@ -129,7 +132,14 @@ exports.del = function(key) {
         $scope.section.generate = function () {
             var target = {};
             target = $scope.section.generateObject($scope.section.schema, target);
-
+            FileFactory.saveText(JSON.stringify(target), "backend/backend.json");
+            var message = '<strong>Success!</strong> Files generated successfully.';
+                var id = Flash.create('success', message, 3000, {
+                    class: 'custom-class',
+                    id: 'custom-id'
+                }, true);
+            console.log(target);
+/*
             try {
                 var textConfig = JSON.stringify(target);
                 FileFactory.saveText(textConfig, "config.json");
@@ -146,6 +156,8 @@ exports.del = function(key) {
                 }, true);
                 console.log(e);
             }
+
+            //*/
 
         };
 

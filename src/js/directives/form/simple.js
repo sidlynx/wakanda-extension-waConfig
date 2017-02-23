@@ -10,8 +10,17 @@ app
             },
             transclude: true,
             link: function (scope, element, attrs) {
+
                 if (scope.model === undefined || typeof (scope.model) === "object") {
                     scope.model = "";
+                    
+                    scope.schema.value = "";
+                    if (scope.schema.default !== undefined) {
+                        scope.schema.value = scope.schema.default;
+                    }
+                }
+                else {
+                    scope.schema.value = scope.model;
                 }
                 if (scope.schema.type === "file") {
                     scope.schema.code = FileFactory.loadText(scope.schema.path).then(function (content) {
