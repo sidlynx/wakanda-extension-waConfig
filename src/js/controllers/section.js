@@ -42,8 +42,8 @@ app
                     "properties": [{
                         "name": "code",
                         "type": "file",
-                        "pathOld": "backend/modules/wakanda-cache-custom/index.json",
-                        "path": "backend/modules/wakanda-cache-custom/index.js",
+                        "pathOld": "modules/wakanda-cache-custom/index.json",
+                        "path": "modules/wakanda-cache-custom/index.js",
                         "default": `exports.set = function(key, value){
     // set() method is called when the Wakanda server needs to save data in the cache
     // Type your code here
@@ -82,7 +82,7 @@ exports.del = function(key) {
         $scope.section.model = {};
 
         $scope.section.submit = function () {
-            FileFactory.saveText(JSON.stringify($scope.section.model), "backend/backend.waConfig");
+            FileFactory.saveText(JSON.stringify($scope.section.model), "backend.waConfig");
             var message = '<strong>Success!</strong> Files generated successfully.';
                 var id = Flash.create('success', message, 3000, {
                     class: 'custom-class',
@@ -128,7 +128,7 @@ exports.del = function(key) {
         $scope.section.generate = function () {
             var target = {};
             target = $scope.section.generateObject($scope.section.schema, target);
-            FileFactory.saveText(JSON.stringify(target), "backend/backend.json");
+            FileFactory.saveText(JSON.stringify(target), "backend.json");
             var message = '<strong>Success!</strong> Files generated successfully.';
                 var id = Flash.create('success', message, 3000, {
                     class: 'custom-class',

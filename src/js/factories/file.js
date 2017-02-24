@@ -33,7 +33,6 @@ app
                 studio.currentSolution.getProjects().then((projectList) => {
                     var folderPath = studio.solutionFolderPath;
                     folderPath = folderPath.substring(0, folderPath.lastIndexOf("/"));
-                    folderPath = folderPath.substring(0, folderPath.lastIndexOf("/"));
                     folderPath += "/";
 
                     try {
