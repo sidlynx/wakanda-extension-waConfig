@@ -4,7 +4,7 @@ function init() {
         studio.alert("No solution is open");
     }
 		else {
-        studio.extension.registerTabPage('build/index.html', 'icons\\icon_config_tree.png', 'Setup your config');
+        studio.extension.registerTabPage('build/index.html', 'icon_config_tree.png', 'Setup your config');
 
         var rememberInNextSession = true;
         var openOnLeft = false;
