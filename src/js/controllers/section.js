@@ -29,7 +29,7 @@ app
                         "name": "port",
                         "type": "port",
                         "value": "",
-                        "formLabel": "Redis Port",
+                        "label": "Redis Port",
                         "formTip": "Enter your Redis port",
                         "error": "Invalid Port number"
                     }],
