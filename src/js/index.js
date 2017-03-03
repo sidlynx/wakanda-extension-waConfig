@@ -21,7 +21,7 @@ require("../www/css/app.scss");
 
 
 var app = angular
-    .module("waConfig", ["ngRoute", "ui.bootstrap","ngFlash"])
+    .module("waConfig", ["ngRoute", "ui.bootstrap", "ngFlash"])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
@@ -50,6 +50,23 @@ var app = angular
                 $window.open(url, '_blank');
             else $window.open(url, '_self');
         };
+
+        $rootScope.file = {};
+        $rootScope.file.openFileInEditor = function (path) {
+            studio.currentSolution.getProjects().then((projectList) => {
+                var folderPath = studio.solutionFolderPath;
+                folderPath = folderPath.substring(0, folderPath.lastIndexOf("/"));
+                folderPath += "/";
+
+                try {
+                    folderPath += JSON.parse(projectList)[0] + "/";
+                }
+                catch (e) {
+
+                }
+                studio.openFile(folderPath + path);
+            })
+        }
     });
 
 

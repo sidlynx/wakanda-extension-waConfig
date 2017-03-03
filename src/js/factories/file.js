@@ -8,7 +8,7 @@ app
                     if (fileExists(studio.solutionFolderPath + path)) {
                         studio.currentSolution.getProjects().then((projectList) => {
                             var folderPath = studio.solutionFolderPath;
-                            folderPath[folderPath.length - 1] = undefined;
+                            folderPath = folderPath.substring(0, folderPath.lastIndexOf("/"));
                             folderPath += "/";
 
                             try {
@@ -44,6 +44,7 @@ app
                     studio.saveText(textContent, folderPath + path);
                 })
             }
+            
         };
         return FileFactory;
     })

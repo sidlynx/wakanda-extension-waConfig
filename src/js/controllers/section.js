@@ -30,7 +30,7 @@ app
                         "type": "port",
                         "value": "",
                         "label": "Redis Port",
-                        "formTip": "Enter your Redis port",
+                        "tip": "Enter your Redis port",
                         "error": "Invalid Port number"
                     }],
                     "label": "Redis"
@@ -115,10 +115,12 @@ exports.del = function(key) {
                     target[src.name] = {};
                 }
             } else if (src.type == "file") {
+                /*
                 var content = src.value;
                 if (content != undefined) {
                     FileFactory.saveText(content, src.path);
                 }
+                //*/
             } else {
                 target[src.name] = src.value;
             }
@@ -174,6 +176,11 @@ exports.del = function(key) {
             }
             return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
                 s4() + '-' + s4() + s4() + s4();
+        }
+
+        $scope.section.openFileInEditor = function(path){
+            console.log("called 2");
+            FileFactory.openFileInEditor(path);
         }
 
     })

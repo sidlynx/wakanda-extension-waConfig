@@ -41,10 +41,15 @@
 </ng-form>
 
 <ng-form ng-show="schema.type == 'file'" name="formFile">
-    <label style="min-width:60px;display:block;color:#212121;font-size:13px;" class="roboto-regular">
+
+
+<button class="btn" ng-click="$root.file.openFileInEditor(schema.path)" style="color:white;background-color:#555;">Edit module file</button>
+
+
+    <!--label style="min-width:60px;display:block;color:#212121;font-size:13px;" class="roboto-regular">
 <i ng-if="schema.tip != undefined" class="icon icon-tooltip" uib-tooltip="{{schema.tip}}" style="color:#20bca3;margin-left:2px;"/>
 </label>
     <textarea class="roboto-regular" style="font-size:13px;color:#555;width:600px;height:200px;" ng-model="schema.value" name="{{schema.name}}"></textarea>
     <span ng-show="formFile.$invalid" class="roboto-regular" style="color:red;"><i class="icon icon-error"></i> {{schema.error}}</span>
-    <span ng-show="formFile.$valid" class="roboto-regular" style="color:#20bca3;"><i class="icon icon-valid"></i></span>
+    <span ng-show="formFile.$valid" class="roboto-regular" style="color:#20bca3;"><i class="icon icon-valid"></i></span-->
 </ng-form>
