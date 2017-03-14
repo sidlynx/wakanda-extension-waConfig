@@ -10,7 +10,6 @@ app
             },
             transclude: true,
             link: function (scope, element, attrs) {
-
                 if (!scope.model) {
                     scope.model = {};
                 }

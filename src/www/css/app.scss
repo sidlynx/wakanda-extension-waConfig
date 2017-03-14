@@ -45,11 +45,6 @@
     color: #212121;
 }
 
-ul {
-    margin-left: 0 !important;
-    padding-left: 0 !important;
-    list-style: none;
-}
 
 li {
     margin: 0 5px !important;
@@ -57,7 +52,11 @@ li {
     list-style: none;
 }
 
-ul {}
+ul {
+    border:0px solid green;
+    margin-left:5px;
+    padding:0px !important;
+}
 
 ul > li > label {
     min-width: 60px !important;

@@ -1,9 +1,9 @@
 var app = require("../");
 
 app
-    .controller("SectionCtrl", function ($scope, FileFactory, Flash) {
+    .controller("SectionCtrl", function ($scope, FileFactory, Flash,$timeout) {
         $scope.section = {};
-        $scope.section.schema = {
+        $scope.section.schemaOld = {
             "name": "Cache",
             "type": "object",
             "properties": [{
@@ -44,7 +44,7 @@ app
                         "type": "file",
                         "pathOld": "modules/wakanda-cache-custom/index.json",
                         "path": "modules/wakanda-cache-custom/index.js",
-                        "default": `exports.set = function(key, value){
+                        "value": `exports.set = function(key, value){
     // set() method is called when the Wakanda server needs to save data in the cache
     // Type your code here
 };
@@ -60,6 +60,151 @@ exports.del = function(key) {
 };`,
                         "label": "File"
                     }],
+                    "label": "Custom"
+                }
+                ]
+            }]
+        };
+
+
+        $scope.section.schema = {
+            "name": "Cache",
+            "label": "Cache",
+            "type": "object",
+            "properties": [{
+                "name": "providers",
+                "label": "Providers",
+                "type": "array",
+                "properties": [{
+                    "name": "local",
+                    "type": "object",
+                    "label": "Local",
+                    "hideable" : true,
+                    "hideProperty" : "enabled",
+                    "properties": [
+                        {
+                            "label": "enabled",
+                            "name": "enabled",
+                            "type": "boolean",
+                            "hidden": true,
+                            "value": false
+                        },
+                        {
+                            "label": "title",
+                            "name": "title",
+                            "type": "string",
+                            "hidden": true,
+                            "value": "Local"
+                        },
+                        {
+                            "label": "name",
+                            "name": "name",
+                            "type": "string",
+                            "hidden": true,
+                            "value": "wakanda-cache-local"
+                        }
+                    ]
+                },
+                {
+                    "name": "Redis",
+                    "type": "object",
+                    "hideable": true,
+                    "hideProperty" : "enabled",
+                    "properties": [
+                        {
+                            "label": "enabled",
+                            "name": "enabled",
+                            "type": "boolean",
+                            "hidden": true,
+                            "value": false
+                        },
+                        {
+                            "label": "title",
+                            "name": "title",
+                            "type": "string",
+                            "hidden": true,
+                            "value": "Redis"
+                        },
+                        {
+                            "label": "name",
+                            "name": "name",
+                            "type": "string",
+                            "hidden": true,
+                            "value": "wakanda-cache-redis"
+                        },
+                        {
+                            "name": "data",
+                            "type": "object",
+                            "properties":
+
+                            [
+                                {
+                                    "name": "hostName",
+                                    "type": "ip",
+                                    "value": "127.0.0.1",
+                                    "label": "Redis Ip address/host name",
+                                    "tip": "Enter your Redis IPV4, IPV6 or hostname",
+                                    "error": "Invalid IP format"
+                                }, {
+                                    "name": "port",
+                                    "type": "port",
+                                    "value": 6379,
+                                    "label": "Redis Port",
+                                    "tip": "Enter your Redis port",
+                                    "error": "Invalid Port number"
+                                }
+                            ]
+                        }
+                    ],
+                    "label": "Redis"
+                },
+                {
+                    "name": "Custom",
+                    "type": "object",
+                    "hideable": true,
+                    "hideProperty" : "enabled",
+                    "properties": [
+                        {
+                            "label": "enabled",
+                            "name": "enabled",
+                            "type": "boolean",
+                            "value" : false,
+                            "hidden": true
+                        },
+                        {
+                            "label": "title",
+                            "name": "title",
+                            "type": "string",
+                            "value" : "Custom",
+                            "hidden": true
+                        },
+                        {
+                            "label": "name",
+                            "name": "name",
+                            "type": "string",
+                            "value" : "wakanda-cache-custom",
+                            "hidden": true
+                        },
+                        {
+                            "name": "code",
+                            "type": "file",
+                            "path": "modules/wakanda-cache-custom/index.js",
+                            "value": `exports.set = function(key, value){
+    // set() method is called when the Wakanda server needs to save data in the cache
+    // Type your code here
+};
+
+exports.get = function(key) {
+    // get() method is called when the Wakanda server needs to retrieve data from the cache
+    // Type your code here
+};
+
+exports.del = function(key) {
+    // del() method is called when the Wakanda server needs to delete data from the cache
+    // Type your code here
+};`,
+                            "label": "File"
+                        }],
                     "label": "Custom"
                 }
                 ]
@@ -82,12 +227,17 @@ exports.del = function(key) {
         $scope.section.model = {};
 
         $scope.section.submit = function () {
+            $timeout(function(){
+                $scope.$apply();
+                console.log($scope.section.model);
+            },0)
+            
             FileFactory.saveText(JSON.stringify($scope.section.model), "backend.waConfig");
             var message = '<strong>Success!</strong> Files generated successfully.';
-                var id = Flash.create('success', message, 3000, {
-                    class: 'custom-class',
-                    id: 'custom-id'
-                }, true);
+            var id = Flash.create('success', message, 3000, {
+                class: 'custom-class',
+                id: 'custom-id'
+            }, true);
         }
 
         $scope.section.generateObject = function (src, target) {
@@ -132,30 +282,30 @@ exports.del = function(key) {
             target = $scope.section.generateObject($scope.section.schema, target);
             FileFactory.saveText(JSON.stringify(target), "backend.json");
             var message = '<strong>Success!</strong> Files generated successfully.';
-                var id = Flash.create('success', message, 3000, {
-                    class: 'custom-class',
-                    id: 'custom-id'
-                }, true);
+            var id = Flash.create('success', message, 3000, {
+                class: 'custom-class',
+                id: 'custom-id'
+            }, true);
             console.log(target);
-/*
-            try {
-                var textConfig = JSON.stringify(target);
-                FileFactory.saveText(textConfig, "config.json");
-                var message = '<strong>Success!</strong> Files generated successfully.';
-                var id = Flash.create('success', message, 0, {
-                    class: 'custom-class',
-                    id: 'custom-id'
-                }, true);
-            } catch (e) {
-                var message = '<strong>Error!</strong> An error occured while genarating files.';
-                var id = Flash.create('error', message, 0, {
-                    class: 'custom-class',
-                    id: 'custom-id'
-                }, true);
-                console.log(e);
-            }
-
-            //*/
+            /*
+                        try {
+                            var textConfig = JSON.stringify(target);
+                            FileFactory.saveText(textConfig, "config.json");
+                            var message = '<strong>Success!</strong> Files generated successfully.';
+                            var id = Flash.create('success', message, 0, {
+                                class: 'custom-class',
+                                id: 'custom-id'
+                            }, true);
+                        } catch (e) {
+                            var message = '<strong>Error!</strong> An error occured while genarating files.';
+                            var id = Flash.create('error', message, 0, {
+                                class: 'custom-class',
+                                id: 'custom-id'
+                            }, true);
+                            console.log(e);
+                        }
+            
+                        //*/
 
         };
 
@@ -178,7 +328,7 @@ exports.del = function(key) {
                 s4() + '-' + s4() + s4() + s4();
         }
 
-        $scope.section.openFileInEditor = function(path){
+        $scope.section.openFileInEditor = function (path) {
             console.log("called 2");
             FileFactory.openFileInEditor(path);
         }

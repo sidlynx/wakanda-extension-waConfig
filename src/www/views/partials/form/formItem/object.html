@@ -1,5 +1,11 @@
-<li wa-simple-form-item ng-if="property.type != 'object' && property.type != 'anyOf'" schema="property" model="model[property.name]"
-    ng-repeat="property in schema.properties" />
-
-<li wa-object-form-item ng-if="schema.type=='object'" schema="property" model="model[property.name]" ng-repeat="property in schema.properties"
-/>
+<li ng-show="!schema.hideable">{{schema.label}}</li>
+<li ng-show="schema.hideable">
+    <input type="checkbox" ng-model="model[schema.hideProperty]" ng-true-value="true" ng-false-value="false" />
+    <label class="roboto-regular" style="font-size:13px;color:#212121;">{{schema.label}}</label>
+</li>
+<ul>
+    <li wa-simple-form-item ng-if="property.type !== 'object' && property.type !== 'anyOf' && property.type !== 'array'" schema="property"
+        model="model[property.name]" ng-repeat="property in schema.properties"></li>
+    <li wa-object-form-item ng-if="property.type === 'object'" schema="property" model="model[property.name]" ng-repeat="property in schema.properties"></li>
+    <li wa-array-form-item ng-if="property.type === 'array'" schema="property" model="model[property.name]" ng-repeat="property in schema.properties">{{model}}</li>
+</ul>

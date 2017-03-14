@@ -14,14 +14,22 @@ app
                 if (scope.model === undefined || typeof (scope.model) === "object") {
                     scope.model = "";
 
+                    if(scope.schema.value !== undefined){
+                        scope.model = scope.schema.value;
+                    }
+
+/*
                     scope.schema.value = "";
                     if (scope.schema.default !== undefined) {
                         scope.schema.value = scope.schema.default;
                     }
+                    //*/
                 }
                 else {
-                    scope.schema.value = scope.model;
+                    //scope.schema.value = scope.model;
                 }
+                
+                
                 if (scope.schema.type === "file") {
                     FileFactory.loadText(scope.schema.path).then(function (content) {
                         if (content === "") {

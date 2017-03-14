@@ -24,6 +24,12 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular-flash-alert@^2.4.0:
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/angular-flash-alert/-/angular-flash-alert-2.4.0.tgz#a7a1f8443c0c6d2fd8ef0e2f9f33e7883c0153e9"
+  dependencies:
+    angular "^1.4.8"
+
 angular-route@^1.5.0:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/angular-route/-/angular-route-1.6.1.tgz#6d1087f4d6a1422026f91a13be86adc8f1d20ec7"
@@ -31,6 +37,10 @@ angular-route@^1.5.0:
 angular-ui-bootstrap@^2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/angular-ui-bootstrap/-/angular-ui-bootstrap-2.4.0.tgz#1a46e1bfacedcf50281684a88f5548be01546e7a"
+
+angular@^1.4.8:
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.3.tgz#5d34b799234e8fa17c6a3a14e0258733935f43e7"
 
 angular@^1.6.1:
   version "1.6.1"
