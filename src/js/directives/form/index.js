@@ -1,13 +1,13 @@
 var app = require("../../");
 
 app
-    .directive("waForm", function ($timeout,FileFactory,Flash) {
+    .directive("waForm", function ($timeout, FileFactory, Flash) {
         return {
             restrict: "AEC",
             scope: {
                 schema: "=",
                 model: "=",
-                holder : "="
+                holder: "="
             },
             transclude: true,
             link: function (scope, element, attrs) {
@@ -32,16 +32,28 @@ app
 
                 }
 
+                scope.saving = false;
+
                 scope.generate = function () {
-                    console.log(scope.holder);
+                    scope.saving = true;
                     var result = {};
                     result[scope.holder] = scope.model;
-                    FileFactory.saveText(JSON.stringify(result,null,"\t"), "backend.json");
-                    var message = '<strong>Success!</strong> Files generated successfully.';
-                    var id = Flash.create('success', message, 3000, {
-                        class: 'custom-class',
-                        id: 'custom-id'
-                    }, true);
+                    FileFactory.saveText(JSON.stringify(result, null, "\t"), "backend.json").then((content) => {
+                        var message = '<strong>Success!</strong> File generated successfully.';
+                        var id = Flash.create('success', message, 3000, {
+                            class: 'custom-class',
+                            id: 'custom-id'
+                        }, true);
+                        scope.saving = false;
+                    }, (error) => {
+                        var message = '<strong>Error!</strong> File not generated.';
+                        var id = Flash.create('error', message, 3000, {
+                            class: 'custom-class',
+                            id: 'custom-id'
+                        }, true);
+                        scope.saving = false;
+                    })
+
                 }
 
             },

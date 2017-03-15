@@ -17,11 +17,17 @@ require("../../node_modules/angular-flash-alert/dist/angular-flash.js");
 require("angular-ui-bootstrap");
 
 
+require("ladda/dist/ladda.min.css");
+require("ladda/dist/ladda.min.js");
+require("ladda/dist/spin.min.js");
+require("angular-ladda");
+
+
 require("../www/css/app.scss");
 
 
 var app = angular
-    .module("waConfig", ["ngRoute", "ui.bootstrap", "ngFlash"])
+    .module("waConfig", ["ngRoute", "ui.bootstrap", "ngFlash","angular-ladda"])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
