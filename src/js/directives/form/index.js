@@ -36,22 +36,25 @@ app
 
                 scope.generate = function () {
                     scope.saving = true;
+                    $timeout(function () { scope.$apply() }, 0);
                     var result = {};
                     result[scope.holder] = scope.model;
                     FileFactory.saveText(JSON.stringify(result, null, "\t"), "backend.json").then((content) => {
                         var message = '<strong>Success!</strong> File generated successfully.';
-                        var id = Flash.create('success', message, 3000, {
+                        Flash.create('success', message, 3000, {
                             class: 'custom-class',
                             id: 'custom-id'
                         }, true);
                         scope.saving = false;
+                        $timeout(function () { scope.$apply() }, 0);
                     }, (error) => {
                         var message = '<strong>Error!</strong> File not generated.';
-                        var id = Flash.create('error', message, 3000, {
+                        Flash.create('error', message, 3000, {
                             class: 'custom-class',
                             id: 'custom-id'
                         }, true);
                         scope.saving = false;
+                        $timeout(function () { scope.$apply() }, 0);
                     })
 
                 }
