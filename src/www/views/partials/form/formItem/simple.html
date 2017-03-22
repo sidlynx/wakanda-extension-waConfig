@@ -19,7 +19,7 @@
 </ng-form>
 
 <ng-form ng-show="schema.type == 'file' &&  !schema.hidden" name="formFile">
-    <button class="btn" ng-click="$root.file.openFileInEditor(schema.path)" style="color:white;background-color:#555;margin-top:20px;">Edit module file</button>
+    <button class="btn" ng-click="openFileInEditor()" style="color:white;background-color:#555;margin-top:20px;">Edit module file</button>
 </ng-form>
 
 <ng-form ng-show="schema.type === 'boolean' &&  !schema.hidden" name="form">

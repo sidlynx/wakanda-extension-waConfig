@@ -56,9 +56,7 @@ app
                         scope.saving = false;
                         $timeout(function () { scope.$apply() }, 0);
                     })
-
                 }
-
             },
             templateUrl: "views/partials/form/index.html"
         };
