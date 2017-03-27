@@ -42,7 +42,6 @@ app
                     "properties": [{
                         "name": "code",
                         "type": "file",
-                        "pathOld": "modules/wakanda-cache-custom/index.json",
                         "path": "modules/wakanda-cache-custom/index.js",
                         "value": `exports.set = function(key, value){
     // set() method is called when the Wakanda server needs to save data in the cache

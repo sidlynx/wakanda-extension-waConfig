@@ -31,6 +31,7 @@ app
 
 
                 if (scope.schema.type === "file") {
+                    scope.model = undefined;
                     
                     //if file doesn't exist and the schema value isn't undefined,create the file with the default schema value
                     FileFactory.exists(scope.schema.path).then((fullPath) => {
