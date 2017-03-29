@@ -138,7 +138,7 @@ exports.del = function(key) {
 
                             [
                                 {
-                                    "name": "hostName",
+                                    "name": "hostname",
                                     "type": "ip",
                                     "value": "127.0.0.1",
                                     "label": "Redis Ip address/host name",
