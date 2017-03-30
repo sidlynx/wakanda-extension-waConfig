@@ -8,5 +8,8 @@
         <li wa-any-of-form-item ng-if="property.type === 'anyOf'" schema="property" model="model[property.name]" ng-repeat="property in schema.properties"></li-->
         <li wa-array-form-item ng-if="property.type === 'array'" schema="property" model="model[property.name]" ng-repeat="property in schema.properties"></li>
     </ul>
-    <button ladda = "false" class="btn btn-sm btn-primary roboto-regular" data-style="zoom-out" ng-click="generate()" style="color:white;background-color:#555;margin-top:70px;padding:0.5rem 1rem !important;    border-radius: 0.25rem;height:38px;font-size:1rem;">Save</button>
+    <button ladda = "saving" class="btn btn-sm btn-primary roboto-regular" data-style="zoom-out" ng-click="generate()" style="color:white;background-color:#555;margin-top:70px;padding:0.5rem 1rem !important;border-radius: 0.25rem;height:38px;font-size:1rem;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+    
+    ">Save</button>
 </div>
