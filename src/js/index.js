@@ -27,7 +27,7 @@ require("../www/css/app.scss");
 
 
 var app = angular
-    .module("waConfig", ["ngRoute", "ui.bootstrap", "ngFlash","angular-ladda"])
+    .module("waConfig", ["ngRoute", "ui.bootstrap", "ngFlash", "angular-ladda"])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
@@ -78,9 +78,16 @@ var app = angular
 
 
 
+
+
+
+
 studio.inited().then(function () {
-    angular.bootstrap("html", ["waConfig"]);
-})
+    angular.bootstrap(document, ["waConfig"]);
+});
+
+
+//angular.bootstrap(document, ["waConfig"]);
 
 
 
@@ -90,3 +97,4 @@ module.exports = app;
 require("./factories");
 require("./controllers");
 require("./directives");
+require("./filters");
